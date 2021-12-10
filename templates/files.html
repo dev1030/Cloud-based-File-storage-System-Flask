@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}files{% endblock %}
+
+{% block content %}
+
+    <script>
+        var jsonfile={jsonfile}
+        console.log(jsonfile)
+
+        function getfile(p1) {
+        return 'http://localhost:5000//getfile/06366026.pdf208243.pdf'   // The function returns the product of p1 and p2
+        }
+    </script>
+
+<h1>My Files</h1>
+<hr>
+<br>
+    <!-- <div class="container">
+      {% for each in jsonfile %}
+      <li>{{ each }}</li>
+      
+      {% endfor %}
+
+  </div> -->
+
+  <table>
+    <tbody>
+    {# here we iterate over every item in our list#}
+    {% for item in jsonfile %}
+    
+        <tr><td>{{ item }}</td> <td><button ><a href='getfile//{{item}}'>Download</a></button><button><a href='/share//{{item}}'>Share</a></button></td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+ 
+  </body>
+
+{% endblock %}
